@@ -45,6 +45,26 @@ export function MailAddress() {
   );
 }
 
+export function Also({
+  links,
+}: {
+  links: readonly { href: string; label: string }[];
+}) {
+  if (links.length === 0) return null;
+  return (
+    <div className="also">
+      <p className="branch-label">Verder op deze site</p>
+      <ul className="along">
+        {links.map((link) => (
+          <li key={link.href}>
+            <Link href={link.href}>{link.label}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export function TaskList({ items }: { items: readonly string[] }) {
   return (
     <ul className="tasks">

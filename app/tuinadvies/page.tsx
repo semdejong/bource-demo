@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { content, photos } from "@/content";
 import PhotoPlates from "@/components/PhotoPlates";
 import SiteChrome from "@/components/SiteChrome";
-import { Branch, CallStrip } from "@/components/espalier";
+import { Also, Branch, CallStrip } from "@/components/espalier";
 
 const page = content.pages.tuinadvies;
 
@@ -16,9 +16,9 @@ export default function TuinadviesPage() {
     <SiteChrome>
       <Branch label="04 ADVIES" />
       <div className="field-body wide">
+        <h1>{page.title}</h1>
         <div className="with-plate">
           <div className="copy">
-            <h1>{page.title}</h1>
             <p className="lede">{page.paragraphs[0]}</p>
             <p>{page.paragraphs[1]}</p>
           </div>
@@ -27,8 +27,9 @@ export default function TuinadviesPage() {
       </div>
       <Branch />
       <div className="field-body">
-        <h2>Huis te koop</h2>
-        <p>{page.paragraphs[2]}</p>
+        <h2 className="beat-title">Huis te koop</h2>
+        <p className="lede">{page.paragraphs[2]}</p>
+        <Also links={page.also} />
       </div>
       <CallStrip />
     </SiteChrome>

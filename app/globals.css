@@ -711,6 +711,11 @@ a {
   padding-top: 0.15rem;
 }
 
+.task-copy a {
+  font-weight: 600;
+  text-underline-offset: 0.18em;
+}
+
 .ledger-k {
   font-weight: 600;
   margin: 0;
@@ -1054,6 +1059,51 @@ a {
 
 .sleads-badge:hover {
   background: var(--vlak);
+}
+
+.also {
+  margin-top: 0.4rem;
+}
+
+.along {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 1.15rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.along a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+  text-underline-offset: 0.18em;
+}
+
+.along a:hover {
+  color: var(--blad);
+}
+
+.latin {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: clamp(1.02rem, 2vw, 1.28rem);
+  line-height: 1.45;
+  margin: 0.2rem 0 0;
+}
+
+.tasks li:nth-child(3n) .task-stub {
+  width: 2.75rem;
+}
+
+.tasks li:nth-child(3n + 2) .task-stub {
+  width: 1.35rem;
+}
+
+.beat-title {
+  font-size: clamp(1.45rem, 2.6vw, 2.05rem);
 }
 
 @keyframes branch-draw {

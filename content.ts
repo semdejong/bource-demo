@@ -62,7 +62,7 @@ export const content = {
       {
         label: "01 TUINONTWERP",
         title: "Tuinontwerp",
-        text: "In nauw overleg wordt gezocht naar een passend ontwerp, waarbij rekening gehouden wordt met uw wensen, de mogelijkheden en de milieuaspecten.",
+        text: "In nauw overleg met de klant wordt gezocht naar een passend ontwerp, waarbij rekening gehouden wordt met de wensen en de mogelijkheden van de klant, alsmede de milieuaspecten die een rol spelen bij de aanleg en het onderhoud.",
         href: "/tuinontwerp",
         link: "Tuinontwerp en -aanleg",
       },
@@ -76,14 +76,14 @@ export const content = {
       {
         label: "03 ONDERHOUD",
         title: "Tuinonderhoud",
-        text: "Voor- en najaarsbeurt, onderhoud het gehele jaar, maaien, snoei van hoge bomen met een hoogwerker, versnipperen en het uitdunnen van windsingels.",
+        text: "Voor- en najaarsbeurt, onderhoud het gehele jaar, maaien, snoei van hoge bomen met een hoogwerker, snoeihout versnipperen, uitdunnen van windsingels, graven, en tuin- en plantenadvies.",
         href: "/tuinonderhoud",
         link: "Tuinonderhoud",
       },
       {
         label: "04 ADVIES",
         title: "Tuinadvies",
-        text: "Het plaatsen van leibomen en -struiken is een goede oplossing tegen ongewenste inkijk in uw tuin. Wij adviseren, plaatsen en onderhouden.",
+        text: "Het plaatsen van leibomen en -struiken is een goede oplossing tegen ongewenste inkijk in uw tuin. Hoveniersbedrijf Bource kan u hierbij van advies dienen en de gewenste prijsvriendelijke materialen en producten plaatsen en onderhouden.",
         href: "/tuinadvies",
         link: "Tuinadvies",
       },
@@ -150,6 +150,29 @@ export const content = {
       ],
       aanleg:
         "De door ons ontworpen tuinen kunnen vanzelfsprekend ook door ons worden aangelegd. U kunt rekenen op een perfecte afhandeling en snelle realisering van het project.",
+      beats: [
+        {
+          title: "Gespecialiseerd in tuinontwerp",
+          text: "Het behoeft geen betoog dat Hoveniersbedrijf Bource gespecialiseerd is in tuinontwerp.",
+        },
+        {
+          title: "In nauw overleg",
+          text: "In nauw overleg met de klant wordt gezocht naar een passend ontwerp.",
+        },
+        {
+          title: "Wensen en mogelijkheden",
+          text: "Er wordt rekening gehouden met de wensen en de mogelijkheden van de klant.",
+        },
+        {
+          title: "Milieuaspecten",
+          text: "Alsmede de milieuaspecten die een rol spelen bij de aanleg en het onderhoud.",
+        },
+      ],
+      also: [
+        { href: "/planten", label: "Onze planten" },
+        { href: "/producten", label: "Onze producten" },
+        { href: "/onderhoudsvrije-gazons", label: "Onderhoudsvrije gazons en borders" },
+      ],
     },
     tuinonderhoud: {
       title: "Tuinonderhoud",
@@ -157,14 +180,33 @@ export const content = {
         "Voor- en najaarsbeurt, onderhoud het gehele jaar, maaien, snoei met hoogwerker, versnipperen, windsingels, graven en tuinadvies.",
       intro: "Op het gebied van tuinonderhoud hebben we onder andere het volgende te bieden:",
       tasks: [
-        "de voor- en najaarsbeurt",
-        "onderhoud van uw tuin gedurende het gehele jaar",
-        "maaien van het gazon, eventueel onderhoud van de tuin gedurende de vakantie",
-        "snoeien van hoge bomen met een hoogwerker",
-        "snoeihout versnipperen",
-        "uitdunnen van windsingels",
-        "beplanten en onderhoud van graven",
-        "tuin- en plantenadvies",
+        { title: "De voor- en najaarsbeurt" },
+        { title: "Onderhoud van uw tuin gedurende het gehele jaar" },
+        {
+          title: "Maaien van het gazon, eventueel onderhoud van de tuin gedurende de vakantie",
+          href: "/vakantie",
+          link: "Uw tuin tijdens uw vakantie",
+        },
+        { title: "Snoeien van hoge bomen met een hoogwerker" },
+        { title: "Snoeihout versnipperen" },
+        { title: "Uitdunnen van windsingels" },
+        {
+          title: "Beplanten en onderhoud van graven",
+          href: "/grafbeplanting",
+          link: "Grafbeplanting",
+        },
+        {
+          title: "Tuin- en plantenadvies",
+          href: "/tuinadvies",
+          link: "Tuinadvies",
+        },
+      ],
+      hedge: "Haag voor het snoeien, en haag na het snoeien.",
+      also: [
+        { href: "/vakantie", label: "Uw tuin tijdens uw vakantie" },
+        { href: "/grafbeplanting", label: "Grafbeplanting" },
+        { href: "/tuinadvies", label: "Tuinadvies" },
+        { href: "/planten", label: "Onze planten" },
       ],
     },
     tuinadvies: {
@@ -176,6 +218,11 @@ export const content = {
         "Hoveniersbedrijf Bource kan u hierbij van advies dienen en uiteraard ook de gewenste prijsvriendelijke materialen en producten plaatsen en onderhouden.",
         "Misschien heeft u uw huis te koop staan en doet u regelmatig mee aan de halfjaarlijkse open dagen. Dan zou het de moeite kunnen lonen om uw tuin nog eens aan een kritisch onderzoek te onderwerpen. Ook hierin kan Hoveniersbedrijf Bource u bijstaan. En mocht het toch nog niet lukken uw huis te verkopen, dan kunt u er in ieder geval zelf nog veel plezier aan beleven.",
       ],
+      also: [
+        { href: "/planten", label: "Onze planten" },
+        { href: "/producten", label: "Onze producten" },
+        { href: "/tuinontwerp", label: "Tuinontwerp en -aanleg" },
+      ],
     },
     gazons: {
       title: "Onderhoudsvrije gazons en borders",
@@ -185,6 +232,11 @@ export const content = {
       paragraphs: [
         "De ideale oplossing voor mensen die wel van hun tuin houden, maar zelf geen groene vingers hebben. Hoveniersbedrijf Bource kan u helpen door het aanleggen van (bijna) onderhoudsvrije gazons en borders.",
         "Laat u verrassen en laat Bource een zogenaamd genietpakket uitzetten. U heeft er geen omkijken naar en binnen no time heeft u een prachtige border.",
+      ],
+      also: [
+        { href: "/producten", label: "Onze producten" },
+        { href: "/tuinontwerp", label: "Tuinontwerp en -aanleg" },
+        { href: "/bodembedekking", label: "Bodembedekking" },
       ],
     },
     graf: {
@@ -203,6 +255,13 @@ export const content = {
         "Wij kunnen u adviseren, een beplantingsadvies geven of de grafbeplanting aanleggen.",
         "Ook kunnen wij het onderhoud van een graf voor u verzorgen. In overleg, zo vaak als u nodig acht.",
       ],
+      steps: [
+        "Adviseren",
+        "Een beplantingsadvies geven",
+        "De grafbeplanting aanleggen",
+        "Het onderhoud verzorgen, in overleg, zo vaak als u nodig acht",
+      ],
+      also: [{ href: "/tuinonderhoud", label: "Tuinonderhoud" }],
     },
     groeigarantie: {
       title: "Groeigarantie",
@@ -213,6 +272,14 @@ export const content = {
         "Alle door ons geleverde en geplante bomen, heesters en vaste planten die binnen één jaar na het planten doodgaan, worden herplant.",
         "Beplanting, tijd en eventuele meststoffen worden niet berekend.",
       ],
+      covered: ["bomen", "heesters", "vaste planten"],
+      terms: [
+        "Geleverd én geplant door Hoveniersbedrijf Bource.",
+        "Doodgegaan binnen één jaar na het planten.",
+        "Worden herplant.",
+        "Beplanting, tijd en eventuele meststoffen worden niet berekend.",
+      ],
+      also: [{ href: "/planten", label: "Onze planten" }],
     },
     vakantie: {
       title: "Uw tuin tijdens uw vakantie",
@@ -223,6 +290,7 @@ export const content = {
         "Een belangrijk bijkomend voordeel is dat het ongewenste indringers niet opvalt dat u op vakantie bent.",
       ],
       cta: "Bel voor een offerte of een afspraak.",
+      also: [{ href: "/tuinonderhoud", label: "Tuinonderhoud" }],
     },
     planten: {
       title: "Onze planten",
@@ -238,6 +306,12 @@ export const content = {
         { name: "Vaste planten", range: "Acaena buchananii tot en met Yucca filamentosa" },
         { name: "Meststoffen", range: "" },
       ],
+      forms: ["bol", "piramide", "kubus"],
+      also: [
+        { href: "/groeigarantie", label: "Groeigarantie" },
+        { href: "/tuinadvies", label: "Tuinadvies" },
+        { href: "/tuinontwerp", label: "Tuinontwerp en -aanleg" },
+      ],
     },
     producten: {
       title: "Onze producten",
@@ -251,6 +325,11 @@ export const content = {
         "schuttingen en hekwerk",
         "tuinhuisjes en pergola’s",
         "vijvers en waterornamenten",
+      ],
+      also: [
+        { href: "/onderhoudsvrije-gazons", label: "Onderhoudsvrije gazons en borders" },
+        { href: "/tuinontwerp", label: "Tuinontwerp en -aanleg" },
+        { href: "/bodembedekking", label: "Bodembedekking" },
       ],
     },
     onkruid: {
@@ -267,6 +346,10 @@ export const content = {
         "Het werkt tot een jaar lang.",
         "Door de gemakkelijke toepassing en de preventieve werking werkt het zeer arbeidsbesparend.",
       ],
+      also: [
+        { href: "/tuinonderhoud", label: "Tuinonderhoud" },
+        { href: "/bodembedekking", label: "Bodembedekking" },
+      ],
     },
     bodem: {
       title: "Bodembedekking",
@@ -275,6 +358,11 @@ export const content = {
       paragraphs: [
         "Hoveniersbedrijf Bource kan u elke gewenste hoeveelheid bodembedekking leveren, zoals bijvoorbeeld grind, zand of split. U zit niet vast aan grote partijen die u in hun geheel moet betalen.",
         "Wij leveren maatwerk: niet te weinig, maar ook niet te veel.",
+      ],
+      materials: ["grind", "zand", "split"],
+      also: [
+        { href: "/producten", label: "Onze producten" },
+        { href: "/onderhoudsvrije-gazons", label: "Onderhoudsvrije gazons en borders" },
       ],
     },
     contact: {
@@ -301,7 +389,7 @@ export const content = {
     },
     notFound: {
       title: "Deze pagina bestaat niet",
-      text: "Het adres klopt niet, of de pagina hoort niet bij deze conceptsite.",
+      text: "Het adres klopt niet, of de pagina hoort niet bij deze conceptsite. Deze tak loopt hier niet verder.",
       link: "Terug naar welkom",
     },
   },

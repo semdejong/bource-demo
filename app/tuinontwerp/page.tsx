@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { content, photos } from "@/content";
 import PhotoPlates from "@/components/PhotoPlates";
 import SiteChrome from "@/components/SiteChrome";
-import { Branch, CallStrip } from "@/components/espalier";
+import { Also, Branch, CallStrip } from "@/components/espalier";
 
 const page = content.pages.tuinontwerp;
 
@@ -17,17 +17,30 @@ export default function TuinontwerpPage() {
       <Branch label="01 TUINONTWERP" />
       <div className="field-body wide">
         <h1>{page.title}</h1>
-        {page.paragraphs.map((paragraph) => (
-          <p key={paragraph} className="lede">
-            {paragraph}
-          </p>
-        ))}
-        <PhotoPlates photos={[photos.ontwerpBorder, photos.grindbed, photos.ontwerpSchets]} />
+        <p className="lede">{page.paragraphs[0]}</p>
+      </div>
+      {page.beats.map((beat) => (
+        <section key={beat.title}>
+          <Branch />
+          <div className="field-body">
+            <h2 className="beat-title">{beat.title}</h2>
+            <p>{beat.text}</p>
+          </div>
+        </section>
+      ))}
+      <Branch />
+      <div className="field-body wide">
+        <h2 className="beat-title">Werk</h2>
+        <PhotoPlates photos={[photos.ontwerpBorder, photos.grindbed, photos.indexVijver]} />
+        <p className="branch-label">Schets, klein gehouden</p>
+        <PhotoPlates photos={[photos.ontwerpSchets]} />
       </div>
       <Branch label="02 AANLEG" />
-      <div className="field-body" id="aanleg">
+      <div className="field-body wide" id="aanleg">
         <h2>Aanleg</h2>
-        <p>{page.aanleg}</p>
+        <p className="lede">{page.aanleg}</p>
+        <PhotoPlates photos={[photos.terras, photos.indexTuin]} />
+        <Also links={page.also} />
       </div>
       <CallStrip />
     </SiteChrome>

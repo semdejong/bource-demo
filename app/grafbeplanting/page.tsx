@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { content } from "@/content";
 import SiteChrome from "@/components/SiteChrome";
-import { Branch, CallStrip } from "@/components/espalier";
+import { Also, Branch, CallStrip, TaskList } from "@/components/espalier";
 
 const page = content.pages.graf;
 
@@ -16,20 +16,25 @@ export default function GrafPage() {
       <Branch />
       <div className="field-body">
         <h1>{page.title}</h1>
-        <p>{page.paragraphs[0]}</p>
-        {page.questions.map((question) => (
-          <p className="question" key={question}>
-            {question}
-          </p>
-        ))}
-        <p>{page.paragraphs[1]}</p>
+        <p className="lede">{page.paragraphs[0]}</p>
       </div>
+      {page.questions.map((question) => (
+        <section key={question}>
+          <Branch />
+          <div className="field-body">
+            <p className="question">{question}</p>
+          </div>
+        </section>
+      ))}
       <Branch />
       <div className="field-body">
-        <h2>Wat kan Hoveniersbedrijf Bource voor u doen</h2>
+        <p className="lede">{page.paragraphs[1]}</p>
+        <h2 className="beat-title">Wat kan Hoveniersbedrijf Bource voor u doen</h2>
         {page.offer.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
+        <TaskList items={page.steps} />
+        <Also links={page.also} />
       </div>
       <CallStrip />
     </SiteChrome>
