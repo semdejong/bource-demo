@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { content, photos, type Plate } from "@/content";
-import PhotoPlates from "@/components/PhotoPlates";
 import SiteChrome from "@/components/SiteChrome";
-import { Also, Branch, CallStrip } from "@/components/espalier";
+import { Also, Branch, CallStrip, Hung } from "@/components/espalier";
 
 const page = content.pages.producten;
 
@@ -16,10 +14,19 @@ const plates: (readonly Plate[])[] = [
   [photos.vijverrand, photos.indexVijver],
 ];
 
+const links: Record<number, { href: string; label: string }> = {
+  0: { href: "/onderhoudsvrije-gazons", label: "Onderhoudsvrije gazons en borders" },
+  2: { href: "/tuinontwerp#aanleg", label: "Aanleg" },
+};
+
 export const metadata: Metadata = {
   title: page.title,
   description: page.description,
 };
+
+function zin(value: string) {
+  return value.charAt(0).toLocaleUpperCase("nl-NL") + value.slice(1);
+}
 
 export default function ProductenPage() {
   return (
@@ -29,31 +36,16 @@ export default function ProductenPage() {
         <h1>{page.title}</h1>
         <p className="lede">{page.intro}</p>
       </div>
-      {page.items.map((item, index) => (
-        <section key={item}>
-          <Branch />
-          <div className="field-body wide">
-            <div className={plates[index].length ? "with-plate" : undefined}>
-              <div className="copy">
-                <h2 className="beat-title">{item}</h2>
-                {index === 0 ? (
-                  <Link className="link-more" href="/onderhoudsvrije-gazons">
-                    Onderhoudsvrije gazons en borders
-                  </Link>
-                ) : null}
-                {index === 2 ? (
-                  <Link className="link-more" href="/tuinontwerp#aanleg">
-                    Aanleg
-                  </Link>
-                ) : null}
-              </div>
-              {plates[index].length ? <PhotoPlates photos={plates[index]} /> : null}
-            </div>
-          </div>
-        </section>
-      ))}
       <Branch />
-      <div className="field-body">
+      <div className="field-body wide">
+        <Hung
+          items={page.items.map((item, index) => ({
+            title: zin(item),
+            href: links[index]?.href,
+            link: links[index]?.label,
+            photos: plates[index],
+          }))}
+        />
         <Also links={page.also} />
       </div>
       <CallStrip />

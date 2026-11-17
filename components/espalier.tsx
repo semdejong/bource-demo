@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { content, directMail } from "@/content";
+import PhotoPlates from "@/components/PhotoPlates";
+import { content, directMail, type Plate } from "@/content";
 import { ctaType } from "@/lib/cta";
 
 export function Branch({
@@ -62,6 +63,43 @@ export function Also({
         ))}
       </ul>
     </div>
+  );
+}
+
+export function Hung({
+  items,
+}: {
+  items: readonly {
+    title: string;
+    href?: string;
+    link?: string;
+    photos?: readonly Plate[];
+  }[];
+}) {
+  return (
+    <ul className="hung">
+      {items.map((item) => (
+        <li key={item.title}>
+          <span className="task-node" aria-hidden="true" />
+          <span className="task-stub" aria-hidden="true" />
+          <div className="hung-copy">
+            <h2 className="hung-title">
+              {item.href && item.link === item.title ? (
+                <Link href={item.href}>{item.title}</Link>
+              ) : (
+                item.title
+              )}
+            </h2>
+            {item.href && item.link && item.link !== item.title ? (
+              <Link className="link-more" href={item.href}>
+                {item.link}
+              </Link>
+            ) : null}
+          </div>
+          {item.photos && item.photos.length > 0 ? <PhotoPlates photos={item.photos} /> : null}
+        </li>
+      ))}
+    </ul>
   );
 }
 

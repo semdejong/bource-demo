@@ -15,11 +15,11 @@ export default function TuinontwerpPage() {
   return (
     <SiteChrome>
       <Branch label="01 TUINONTWERP" />
-      <div className="field-body wide">
+      <div className="field-body">
         <h1>{page.title}</h1>
-        <p className="lede">{page.paragraphs[0]}</p>
+        <p className="lede">{page.beats[0].text}</p>
       </div>
-      {page.beats.map((beat) => (
+      {page.beats.slice(1).map((beat) => (
         <section key={beat.title}>
           <Branch />
           <div className="field-body">
@@ -30,10 +30,7 @@ export default function TuinontwerpPage() {
       ))}
       <Branch />
       <div className="field-body wide">
-        <h2 className="beat-title">Werk</h2>
-        <PhotoPlates photos={[photos.ontwerpBorder, photos.grindbed, photos.indexVijver]} />
-        <p className="branch-label">Schets, klein gehouden</p>
-        <PhotoPlates photos={[photos.ontwerpSchets]} />
+        <PhotoPlates photos={[photos.ontwerpBorder, photos.grindbed, photos.ontwerpSchets]} />
       </div>
       <Branch label="02 AANLEG" />
       <div className="field-body wide" id="aanleg">

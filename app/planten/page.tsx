@@ -27,17 +27,6 @@ export default function PlantenPage() {
               <div className="copy">
                 <h2 className="beat-title">{group.name}</h2>
                 {group.range ? <p className="latin">{group.range}</p> : null}
-                {group.name === "Buxus" ? (
-                  <ul className="tasks">
-                    {page.forms.map((form) => (
-                      <li key={form}>
-                        <span className="task-node" aria-hidden="true" />
-                        <span className="task-stub" aria-hidden="true" />
-                        <span className="task-copy">{form}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
               </div>
               {group.name === "Rhododendrons" ? <PhotoPlates photos={[photos.rhododendron]} /> : null}
             </div>

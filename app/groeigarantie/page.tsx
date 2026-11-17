@@ -26,9 +26,7 @@ export default function GroeigarantiePage() {
       </div>
       <Branch />
       <div className="field-body">
-        <h2 className="beat-title">De afspraak</h2>
-        <TaskList items={page.terms} />
-        <p className="statement">{page.paragraphs[1]}</p>
+        <p className="pull">{page.paragraphs[1]}</p>
         <Also links={page.also} />
       </div>
       <CallStrip />

@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { content, photos } from "@/content";
+import { content, photos, type Plate } from "@/content";
 import PhotoPlates from "@/components/PhotoPlates";
 import SiteChrome from "@/components/SiteChrome";
-import { Also, Branch, CallStrip } from "@/components/espalier";
+import { Also, Branch, CallStrip, Hung } from "@/components/espalier";
 
 const page = content.pages.tuinonderhoud;
 
-const taskPhotos = [
+const taskPhotos: (readonly Plate[] | undefined)[] = [
   undefined,
   undefined,
   [photos.gazon],
@@ -16,7 +15,7 @@ const taskPhotos = [
   undefined,
   undefined,
   [photos.leibomen],
-] as const;
+];
 
 export const metadata: Metadata = {
   title: page.title,
@@ -31,24 +30,17 @@ export default function TuinonderhoudPage() {
         <h1>{page.title}</h1>
         <p className="lede">{page.intro}</p>
       </div>
-      {page.tasks.map((task, index) => (
-        <section key={task.title}>
-          <Branch />
-          <div className="field-body wide">
-            <div className={taskPhotos[index] ? "with-plate" : undefined}>
-              <div className="copy">
-                <h2 className="beat-title">{task.title}</h2>
-                {"href" in task && task.href ? (
-                  <Link className="link-more" href={task.href}>
-                    {task.link}
-                  </Link>
-                ) : null}
-              </div>
-              {taskPhotos[index] ? <PhotoPlates photos={taskPhotos[index]} /> : null}
-            </div>
-          </div>
-        </section>
-      ))}
+      <Branch />
+      <div className="field-body wide">
+        <Hung
+          items={page.tasks.map((task, index) => ({
+            title: task.title,
+            href: "href" in task ? task.href : undefined,
+            link: "link" in task ? task.link : undefined,
+            photos: taskPhotos[index],
+          }))}
+        />
+      </div>
       <Branch />
       <div className="field-body wide">
         <h2 className="beat-title">Voor en na</h2>

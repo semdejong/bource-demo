@@ -165,7 +165,7 @@ export const content = {
         },
         {
           title: "Milieuaspecten",
-          text: "Alsmede de milieuaspecten die een rol spelen bij de aanleg en het onderhoud.",
+          text: "Er wordt rekening gehouden met de milieuaspecten die een rol spelen bij de aanleg en het onderhoud.",
         },
       ],
       also: [
@@ -272,7 +272,7 @@ export const content = {
         "Alle door ons geleverde en geplante bomen, heesters en vaste planten die binnen één jaar na het planten doodgaan, worden herplant.",
         "Beplanting, tijd en eventuele meststoffen worden niet berekend.",
       ],
-      covered: ["bomen", "heesters", "vaste planten"],
+      covered: ["Bomen", "Heesters", "Vaste planten"],
       terms: [
         "Geleverd én geplant door Hoveniersbedrijf Bource.",
         "Doodgegaan binnen één jaar na het planten.",
@@ -602,7 +602,7 @@ export const photos = {
     alt: "Banner van Hoveniersbedrijf Bource, met drie tuinfoto’s en de bedrijfsnaam.",
     width: 960,
     height: 180,
-    caption: "Banner",
+    caption: "",
   },
 } as const satisfies Record<string, Plate>;
 

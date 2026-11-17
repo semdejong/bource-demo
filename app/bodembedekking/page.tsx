@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
-import { content, photos } from "@/content";
+import { content, photos, type Plate } from "@/content";
 import PhotoPlates from "@/components/PhotoPlates";
 import SiteChrome from "@/components/SiteChrome";
-import { Also, Branch, CallStrip } from "@/components/espalier";
+import { Also, Branch, CallStrip, Hung } from "@/components/espalier";
 
 const page = content.pages.bodem;
+
+const materialPhotos: Record<string, readonly Plate[]> = {
+  grind: [photos.grind],
+};
 
 export const metadata: Metadata = {
   title: page.title,
   description: page.description,
 };
+
+function zin(value: string) {
+  return value.charAt(0).toLocaleUpperCase("nl-NL") + value.slice(1);
+}
 
 export default function BodemPage() {
   return (
@@ -19,22 +27,18 @@ export default function BodemPage() {
         <h1>{page.title}</h1>
         <p className="lede">{page.paragraphs[0]}</p>
       </div>
-      {page.materials.map((material) => (
-        <section key={material}>
-          <Branch />
-          <div className="field-body wide">
-            <div className={material === "grind" ? "with-plate" : undefined}>
-              <div className="copy">
-                <h2 className="beat-title">{material.charAt(0).toUpperCase() + material.slice(1)}</h2>
-              </div>
-              {material === "grind" ? <PhotoPlates photos={[photos.grind]} /> : null}
-            </div>
-          </div>
-        </section>
-      ))}
       <Branch />
       <div className="field-body wide">
-        <p className="statement">{page.paragraphs[1]}</p>
+        <Hung
+          items={page.materials.map((material) => ({
+            title: zin(material),
+            photos: materialPhotos[material],
+          }))}
+        />
+      </div>
+      <Branch />
+      <div className="field-body wide">
+        <p className="pull">{page.paragraphs[1]}</p>
         <PhotoPlates photos={[photos.schors]} />
         <Also links={page.also} />
       </div>
